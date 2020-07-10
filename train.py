@@ -1,7 +1,9 @@
 import cv2
+import time
 
 id= int(input('Enter your id:'))
 cap = cv2.VideoCapture(0)
+
 i=0
 while(True):
     check,frame = cap.read()
@@ -13,7 +15,6 @@ while(True):
         cv2.rectangle(frame,(x,y),((x+w),(y+h)),(255,0,0),2)
         cv2.putText(frame, str(id), (x, y-4), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255,0,0), 1, cv2.LINE_AA)
         vertices=[x,y,x+w,y+h]
-        
     cv2.imshow('frame',frame)
     
     if len(vertices)==4:
