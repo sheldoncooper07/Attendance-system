@@ -1,5 +1,5 @@
 import cv2
-from datetime import datetime
+from datetime import date
 
 
 cap = cv2.VideoCapture(0)
@@ -36,11 +36,11 @@ while(True):
 		
 
 
-time_now = datetime.now()
+today = date.today()
 
-with open('test.csv', 'w') as f:
+with open('attendance.csv', 'a') as f:
     for i in lst:
-        f.write("%s,%s\n"%(time_now,i))
+        f.write("%s,%s\n"%(today,i))
 
 
 

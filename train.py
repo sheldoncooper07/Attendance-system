@@ -1,5 +1,4 @@
 import cv2
-import time
 
 id= int(input('Enter your id:'))
 cap = cv2.VideoCapture(0)
